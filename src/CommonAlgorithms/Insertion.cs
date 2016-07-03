@@ -15,18 +15,18 @@ namespace CommonAlgorithms
 
         public int[] InsertionSort(int[] A)
         {
-            for (var j = 2; j < A.Length; j++)
+            for (var i = 1; i < A.Length; i++)
             {
-                var key = A[j];
+                var key = A[i];
 
-                // Insert A[j] into the sorted sequence A[1..j - 1]
-                var i = j - 1;
-                while (i > 0 && A[i] > key)
+                // Insert A[i] into the sorted sequence A[1..i - 1]
+                var j = i - 1;
+                while (j >= 0 && A[j] > key)
                 {
-                    A[i + 1] = A[i];
-                    i = i - 1;
+                    A[j + 1] = A[j];
+                    j = j - 1;
                 }
-                A[i + 1] = key;
+                A[j + 1] = key;
             }
 
             return A;
@@ -34,7 +34,20 @@ namespace CommonAlgorithms
 
         public int[] InsertionSortDescending(int[] A)
         {
-            //TODO: inverse of InsertionSort
+            //TODO: inverse of InsertionSort?
+            for (var i = A.Length; i > 1; i--)
+            {
+                var key = A[i];
+
+                var j = i + 1;
+                while (j <= 0 && key < A[j])
+                {
+                    A[j - 1] = A[j];
+                    j = j + 1;
+                }
+                A[j - 1] = key;
+            }
+
             return A;
         }
     }

@@ -29,7 +29,7 @@ namespace CommonAlgorithms.Tests
         public void ReturnSortedListDescending()
         {
             var A = new int[] { 5, 2, 4, 6, 1, 3 };
-            var expected = new int[] { 5, 4, 3, 2, 1 };
+            var expected = new int[] { 6, 5, 4, 3, 2, 1 };
             var actual = _insertion.InsertionSortDescending(A);
 
             Assert.Equal(expected, actual);
