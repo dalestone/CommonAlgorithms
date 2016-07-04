@@ -5,11 +5,9 @@ using System.Threading.Tasks;
 
 namespace CommonAlgorithms
 {
-    // This project can output the Class library as a NuGet Package.
-    // To enable this option, right-click on the project and select the Properties menu item. In the Build tab select "Produce outputs on build".
-    public class Insertion
+    public class SortingAlgorithms
     {
-        public Insertion()
+        public SortingAlgorithms()
         {
         }
 
@@ -33,8 +31,8 @@ namespace CommonAlgorithms
         }
 
         public int[] InsertionSortDescending(int[] A)
-        {            
-            int[] ordered  = A.OrderByDescending(n => n).ToArray();
+        {
+            int[] ordered = A.OrderByDescending(n => n).ToArray();
 
             //TODO: inverse of InsertionSort?
             //for (var i = A.Length - 1; i > 1; i--)
@@ -63,7 +61,40 @@ namespace CommonAlgorithms
                     return i;
                 }
             }
-            return -1; 
+            return -1;
+        }
+
+        public void Merge(int[] A, int p, int q, int r)
+        {
+            //var n1 = q - p + 1;
+            //var n2 = r - q;
+            //var L = new int[n1 + 1];
+            //var R = new int[n2 + 1];
+
+            //for (var i = 1; i < n1; i++)
+            //{
+            //    L[i] = A[p + i - 1];
+            //}
+
+            //for (var j = 1; j < n2; j++)
+            //{
+            //    R[j] = A[q + j];
+            //}
+
+            //L[n1 + 1] = infinity
+            //R[n2 + 1] = infinity
+            // i = 1
+            // j = 1
+
+            //for (var k = p; k < r; k++)
+            //{
+            //    if (L[] <= R[])
+            //    {
+            //        A[k] = L[]
+
+            //    }
+            //}
+
         }
     }
 }
