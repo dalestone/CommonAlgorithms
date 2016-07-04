@@ -53,5 +53,17 @@ namespace CommonAlgorithms
 
             return ordered;
         }
+
+        public int LinearSearch(int[] A, int v)
+        {
+            for (var i = 0; i < A.Length; i++)
+            {
+                if (A[i] == v)
+                {
+                    return i;
+                }
+            }
+            return -1; 
+        }
     }
 }

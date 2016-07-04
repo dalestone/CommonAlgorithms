@@ -85,6 +85,28 @@ namespace CommonAlgorithms.Tests
         }
 
         [Fact]
+        public void ReturnIndexOfValueInList()
+        {
+            var A = new List<int> { 5, 2, 4, 6, 1, 3 };
+            var v = 6;
+            var expected = 3;
+            var actual = A.IndexOf(v);
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void ReturnIndexOfValueNotInList()
+        {
+            var A = new List<int> { 5, 2, 4, 6, 1, 3 };
+            var v = 7;
+            var expected = -1;
+            var actual = A.IndexOf(v);
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
         public void CLRS_2_1_1()
         {
             var A = new int[] { 31, 41, 59, 26, 41, 58 };
@@ -102,6 +124,26 @@ namespace CommonAlgorithms.Tests
             var actual = _insertion.InsertionSortDescending(A);
 
             Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void CLRS_2_1_3()
+        {
+            var A = new int[] { 31, 41, 59, 26, 41, 58 };
+            var v = 41;
+            var expected = 1;
+            var actual = _insertion.LinearSearch(A, v);
+
+            Assert.Equal(expected, actual);
+
+            #region pseudocode
+            /* 
+             * for i = 0 to A.length
+             *  if A[i] == v
+             *      return i
+             *  return -1              
+             * */
+            #endregion
         }
     }
 }
